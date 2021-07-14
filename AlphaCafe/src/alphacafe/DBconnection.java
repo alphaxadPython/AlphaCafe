@@ -16,7 +16,7 @@ public class DBconnection {
      public static Connection getConnection() throws SQLException{
         Connection connection = null;
 
-        String dbUrl = "jdbc:mysql://localhost:3306/booking";
+        String dbUrl = "jdbc:mysql://localhost:3306/cafe";
         String user = "root";   
         String pass = "";     
         try {

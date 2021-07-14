@@ -58,6 +58,19 @@ public class User extends NetCafe {
         this.number = number;
     }
 
+//    name, phon, tim, cost, date, comp
+    public User(String name, String phone, String time, String amount, Date date, String number) {
+        this.time = time;
+        this.phone = phone;
+         this.name = name;
+        this.amount = amount;
+        this.date = date;
+        this.number = number;
+    }
+    
+    
+    
+
 //    method to add new user
     public void addUser() {
         try (Connection conn = DBconnection.getConnection()) {
@@ -72,7 +85,7 @@ public class User extends NetCafe {
             preparedStmt.setString(3, time);
             preparedStmt.setString(4, amount);
             preparedStmt.setDate(5, date);
-            preparedStmt.setString(4, number);
+            preparedStmt.setString(6, number);
 
             // Execute the preparedstatement
             preparedStmt.execute();
@@ -83,5 +96,18 @@ public class User extends NetCafe {
         }
         System.out.println("User added successfully");
     }
+    
+    
+    //    assig computer by cheking the real amount
+      public String AssignComputer(String number){
+        String assigned="";
+        
+        if(Integer.parseInt(amount) < 3000 && Integer.parseInt(number) == 1){
+            assigned = "Not more than 30 minute!! Computer number"+ number +"allowed!!";
+        }
+        
+        return assigned;
+    }
+    
 }
 

@@ -49,13 +49,22 @@ public class products extends NetCafe {
         this.number = number;
     }
 
+//    constructor to create new products
+    public products(String name,String cartegory, Date date, String amount,  String number) {
+        this.cartegory = cartegory;
+        this.name = name;
+        this.amount = amount;
+        this.date = date;
+        this.number = number;
+    }
+
 //    add new product
     public void addProduct() {
         try (Connection conn = DBconnection.getConnection()) {
 
             //insert Strin here
             String query = " insert into product (prodName, cartegory, date, amount, productNo)"
-                    + " values (?, ?, ?, ?, ?, ?)";
+                    + " values (?, ?, ?, ?, ?)";
             // statement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, name);

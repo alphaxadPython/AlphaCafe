@@ -49,6 +49,25 @@ public class computer extends NetCafe {
         this.number = number;
     }
 
+//    constructor to construct computer
+    public computer(String name, String amount, Date date, String number, String capacity) {
+        this.capacity = capacity;
+        this.name = name;
+        this.amount = amount;
+        this.date = date;
+        this.number = number;
+    }
+    
+//    constructor without capacity compName, comPNo, compPrice, date
+     public computer(String name, String number, String amount,  Date date) {
+        this.name = name;
+        this.amount = amount;
+        this.date = date;
+        this.number = number;
+    }
+    
+//    adding new computer
+
     public void addComputer() {
         try (Connection conn = DBconnection.getConnection()) {
 
@@ -71,4 +90,7 @@ public class computer extends NetCafe {
         }
         System.out.println("Computer added successfully");
     }
+    
+
+    
 }
