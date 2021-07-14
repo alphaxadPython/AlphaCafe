@@ -12,7 +12,5 @@ public class DashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
-    
-    
-    
+   
 }
