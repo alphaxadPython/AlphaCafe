@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alphacafe.LoginController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="347.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -28,14 +27,14 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="381.0" layoutY="96.0" prefHeight="33.0" prefWidth="244.0" promptText="username" />
+      <TextField fx:id="username" layoutX="381.0" layoutY="96.0" prefHeight="33.0" prefWidth="244.0" promptText="username" />
       <Label layoutX="364.0" layoutY="169.0" text="Password:" textFill="TEAL">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField layoutX="374.0" layoutY="211.0" prefHeight="33.0" prefWidth="244.0" promptText="password" />
-      <Button layoutX="374.0" layoutY="280.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="244.0" style="-fx-background-color: teal;" text="LOGIN" textFill="WHITE" />
+      <PasswordField fx:id="password" layoutX="374.0" layoutY="211.0" prefHeight="33.0" prefWidth="244.0" promptText="password" />
+      <Button fx:id="login" layoutX="374.0" layoutY="280.0" mnemonicParsing="false" onAction="#loginHere" prefHeight="33.0" prefWidth="244.0" style="-fx-background-color: teal;" text="LOGIN" textFill="WHITE" />
       <Label layoutX="415.0" layoutY="334.0" text="Wellcome To Alpha Internet Cafe!!" textFill="TEAL" />
       <Separator layoutX="349.0" layoutY="23.0" orientation="VERTICAL" prefHeight="334.0" prefWidth="4.0" />
    </children>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javafx.scene.control.Alert;
 
 public class User extends NetCafe {
 
@@ -62,14 +63,11 @@ public class User extends NetCafe {
     public User(String name, String phone, String time, String amount, Date date, String number) {
         this.time = time;
         this.phone = phone;
-         this.name = name;
+        this.name = name;
         this.amount = amount;
         this.date = date;
         this.number = number;
     }
-    
-    
-    
 
 //    method to add new user
     public void addUser() {
@@ -96,18 +94,17 @@ public class User extends NetCafe {
         }
         System.out.println("User added successfully");
     }
-    
-    
-    //    assig computer by cheking the real amount
-      public String AssignComputer(String number){
-        String assigned="";
-        
-        if(Integer.parseInt(amount) < 3000 && Integer.parseInt(number) == 1){
-            assigned = "Not more than 30 minute!! Computer number"+ number +"allowed!!";
-        }
-        
-        return assigned;
-    }
-    
-}
 
+    //    assig computer by cheking the real amount
+    public boolean AssignComputer(String amount, String time) {
+        boolean assign = false;
+
+        if (Integer.parseInt(amount) <= 3000 && Integer.parseInt(time) >= 30) {
+            
+            assign = true;
+        }
+
+        return assign;
+    }
+
+}

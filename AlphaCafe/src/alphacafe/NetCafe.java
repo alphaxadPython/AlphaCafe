@@ -10,14 +10,14 @@ public class NetCafe {
     public String number;
 
 //    method to assign coputer for 15 min
-    public String AssignComputer(String number){
-        String assigned="";
+    public boolean AssignComputer(String amount){
+        boolean assign = false;
         
-        if(Integer.parseInt(amount) < 1000 && Integer.parseInt(number) == 1){
-            assigned = "Not more than 15 minute!! Computer number"+ number +"allowed!!";
+        if(Integer.parseInt(amount) < 1000){
+            assign = true;
         }
         
-        return assigned;
+        return assign;
     }
     
 //    asign computer to person with greater amout for whole day

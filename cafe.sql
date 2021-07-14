@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2021 at 10:17 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- Generation Time: Jul 14, 2021 at 10:27 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,13 @@ CREATE TABLE `computer` (
   `date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `computer`
+--
+
+INSERT INTO `computer` (`id`, `name`, `comNpNo`, `amount`, `date`) VALUES
+(4, 'lab5', '234', '434', '2021-07-08');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +56,13 @@ CREATE TABLE `product` (
   `amount` varchar(100) NOT NULL,
   `productNo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `prodName`, `cartegory`, `date`, `amount`, `productNo`) VALUES
+(2, 'Printer', 'Electronics', '2021-07-09', '4543', 'tyrtr45');
 
 -- --------------------------------------------------------
 
@@ -66,6 +79,16 @@ CREATE TABLE `user` (
   `date` varchar(100) NOT NULL,
   `compNo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `phone`, `time`, `amount`, `date`, `compNo`) VALUES
+(2, 'dsfsdf', '434', '45 min', '344', '2021-07-02', '3423'),
+(3, 'ewqeqw', '21323', '1 hour', '5000', '2021-07-09', '23'),
+(4, 'dfdf', 'sdfds', '45 min', '30000', '2021-07-16', 'dfds'),
+(5, 'rttret', 'ret', '15 min', '30000', '2021-07-01', 'ret');
 
 --
 -- Indexes for dumped tables
@@ -97,19 +120,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `computer`
 --
 ALTER TABLE `computer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,16 +13,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class DashboardController implements Initializable {
 
@@ -94,6 +98,10 @@ public class DashboardController implements Initializable {
     private TableColumn<products, String> productPriceCol;
     @FXML
     private TableColumn<products, String> boughtDateCol;
+    @FXML
+    private TabPane AdminTab;
+    @FXML
+    private Button signout;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -143,21 +151,35 @@ public class DashboardController implements Initializable {
                 String comp = compNoUser.getText();
 
                 User newUser = new User(name, phon, tim, cost, date, comp);
-                newUser.addUser();
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("User added successfully!!!!");
-                alert.setTitle("Added User");
-                alert.setHeaderText(null);
-                alert.show();
+                if (newUser.AssignComputer(cost, tim)) {
 
-                fullname.setText("");
-                phoneUser.setText("");
-                dateUser.setValue(null);
-                timeUser.setValue(null);
-                priceNo.setText("");
-                compNoUser.setText("");
-                usersTable();
+                    System.out.println("low");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Check the Amount!!");
+                    alert.setTitle("Amount is Low");
+                    alert.setHeaderText(null);
+                    alert.showAndWait();
+
+                } else {
+
+                    newUser.addUser();
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("User added successfully!!!!");
+                    alert.setTitle("Added User");
+                    alert.setHeaderText(null);
+                    alert.show();
+
+                    fullname.setText("");
+                    phoneUser.setText("");
+                    dateUser.setValue(null);
+                    timeUser.setValue(null);
+                    priceNo.setText("");
+                    compNoUser.setText("");
+                    usersTable();
+                }
+
             }
         } catch (Exception e) {
         }
@@ -616,6 +638,41 @@ public class DashboardController implements Initializable {
             System.out.println("Cannot connect the database!" + e.getMessage());
         }
         System.out.println("Updated Product");
+    }
+
+    @FXML
+    private void goHome(ActionEvent event) {
+        AdminTab.getSelectionModel().select(0);
+    }
+
+    @FXML
+    private void goUsers(ActionEvent event) {
+        AdminTab.getSelectionModel().select(1);
+
+    }
+
+    @FXML
+    private void goComputer(ActionEvent event) {
+        AdminTab.getSelectionModel().select(2);
+
+    }
+
+    @FXML
+    private void goProducts(ActionEvent event) {
+        AdminTab.getSelectionModel().select(3);
+
+    }
+
+    @FXML
+    private void goLogin(ActionEvent event) {
+        try {
+            
+                FXMLLoader form = new FXMLLoader(getClass().getResource("Login.fxml"));
+                Stage stage = (Stage) signout.getScene().getWindow();
+                Scene scene = new Scene(form.load());
+                stage.setScene(scene);
+        } catch (Exception e) {
+        }
     }
 
 }
