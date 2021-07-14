@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,6 +36,7 @@
       </Label>
       <PasswordField layoutX="374.0" layoutY="211.0" prefHeight="33.0" prefWidth="244.0" promptText="password" />
       <Button layoutX="374.0" layoutY="280.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="244.0" style="-fx-background-color: teal;" text="LOGIN" textFill="WHITE" />
-      <Label layoutX="411.0" layoutY="323.0" text="Forgot Password?" textFill="TEAL" />
+      <Label layoutX="415.0" layoutY="334.0" text="Wellcome To Alpha Internet Cafe!!" textFill="TEAL" />
+      <Separator layoutX="349.0" layoutY="23.0" orientation="VERTICAL" prefHeight="334.0" prefWidth="4.0" />
    </children>
 </AnchorPane>
