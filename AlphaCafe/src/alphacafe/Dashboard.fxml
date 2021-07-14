@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alphacafe.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alphacafe.DashboardController">
    <children>
       <MenuBar layoutX="34.0" layoutY="21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -191,13 +191,13 @@
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="21.0" layoutY="45.0" prefHeight="33.0" prefWidth="244.0" promptText="fullname" />
+                              <TextField fx:id="fullname" layoutX="21.0" layoutY="45.0" prefHeight="33.0" prefWidth="244.0" promptText="fullname" />
                               <Label layoutX="24.0" layoutY="97.0" text="Phone:" textFill="TEAL">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="24.0" layoutY="122.0" prefHeight="33.0" prefWidth="112.0" promptText="phone" />
+                              <TextField fx:id="phoneUser" layoutX="24.0" layoutY="122.0" prefHeight="33.0" prefWidth="112.0" promptText="phone" />
                               <Label layoutX="22.0" layoutY="174.0" text="Time:" textFill="TEAL">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
@@ -208,25 +208,25 @@
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="160.0" layoutY="201.0" prefHeight="36.0" prefWidth="106.0" promptText="Price" />
+                              <TextField fx:id="priceNo" layoutX="160.0" layoutY="201.0" prefHeight="36.0" prefWidth="106.0" promptText="Price" />
                               <Label layoutX="25.0" layoutY="253.0" text="Entry Date:" textFill="TEAL">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <ComboBox layoutX="26.0" layoutY="200.0" prefHeight="36.0" prefWidth="123.0" promptText="Chose Timee" />
-                              <Button layoutX="24.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="249.0" style="-fx-background-color: teal;" text="Add User" textFill="WHITE">
+                              <ComboBox fx:id="timeUser" layoutX="26.0" layoutY="200.0" prefHeight="36.0" prefWidth="123.0" promptText="Chose Timee" />
+                              <Button fx:id="addUser" layoutX="24.0" layoutY="338.0" mnemonicParsing="false" onAction="#addUsersHere" prefHeight="25.0" prefWidth="249.0" style="-fx-background-color: teal;" text="Add User" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Button>
-                              <DatePicker layoutX="25.0" layoutY="278.0" prefHeight="37.0" prefWidth="244.0" promptText="date" />
+                              <DatePicker fx:id="dateUser" layoutX="25.0" layoutY="278.0" prefHeight="37.0" prefWidth="244.0" promptText="date" />
                               <Label layoutX="155.0" layoutY="97.0" text="Computer No" textFill="TEAL">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="155.0" layoutY="122.0" prefHeight="33.0" prefWidth="112.0" promptText="comp No" />
+                              <TextField fx:id="compNoUser" layoutX="155.0" layoutY="122.0" prefHeight="33.0" prefWidth="112.0" promptText="comp No" />
                            </children>
                         </Pane>
                         <Label layoutX="100.0" layoutY="21.0" text="Add New Customer:" textFill="TEAL">
@@ -234,22 +234,22 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="329.0" layoutY="68.0" prefHeight="381.0" prefWidth="489.0">
+                        <TableView fx:id="userTable" layoutX="329.0" layoutY="68.0" prefHeight="381.0" prefWidth="489.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Fullname" />
-                            <TableColumn prefWidth="101.0" text="Phone" />
-                              <TableColumn prefWidth="72.0" text="Comp No" />
-                              <TableColumn prefWidth="83.0" text="Time" />
-                              <TableColumn prefWidth="68.0" text="Price" />
-                              <TableColumn prefWidth="88.0" text="Date" />
+                            <TableColumn fx:id="fullnameColUser" prefWidth="75.0" text="Fullname" />
+                            <TableColumn fx:id="phoneColUser" prefWidth="101.0" text="Phone" />
+                              <TableColumn fx:id="compNoUserCol" prefWidth="72.0" text="Comp No" />
+                              <TableColumn fx:id="TimeColUser" prefWidth="83.0" text="Time" />
+                              <TableColumn fx:id="priceColUser" prefWidth="68.0" text="Price" />
+                              <TableColumn fx:id="dateColUser" prefWidth="88.0" text="Date" />
                           </columns>
                         </TableView>
-                        <Button layoutX="522.0" layoutY="459.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: e15a5a;" text="Delete" textFill="WHITE">
+                        <Button layoutX="522.0" layoutY="459.0" mnemonicParsing="false" onAction="#deleteUserHere" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: e15a5a;" text="Delete" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="18.0" />
                            </font>
                         </Button>
-                        <Button layoutX="693.0" layoutY="459.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
+                        <Button layoutX="693.0" layoutY="459.0" mnemonicParsing="false" onAction="#updateUserHere" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="18.0" />
                            </font>
